@@ -1,4 +1,4 @@
-pagi-x.vercel.app/
+https://pagi-x.vercel.app/
 
 About PagiX
 
