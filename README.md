@@ -2,7 +2,7 @@ https://pagi-x.vercel.app/
 
 About PagiX
 
-PagiX is a React-based web application designed to provide a seamless pagination experience while exploring random developer profiles. Whether you're a recruiter, a developer, or just someone curious about the tech community, PagiX makes it easy to browse through various profiles efficiently.
+PagiX is a responsive React-based web application designed to provide a seamless pagination experience while exploring random developer profiles. Whether you're a recruiter, a developer, or just someone curious about the tech community, PagiX makes it easy to browse through various profiles efficiently.
 
 Why PagiX?
 
