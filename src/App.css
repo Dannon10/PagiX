@@ -32,12 +32,13 @@ body {
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
   color: #19191B;
 }
 
 .about-link {
   font-size: 1.5rem;
+  text-decoration: underline;
 }
 
 .user-container {
