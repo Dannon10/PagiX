@@ -1,6 +1,4 @@
 import "./App.css";
-import React from "react";
-import Home from "./components/Home";
 import Users from "./components/Users";
 import About from "./components/About";
 
@@ -8,10 +6,10 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function App() {
   return (
+    <div className="app-container">
     <Routes>
-      <Route path="/" element={<Home />}></Route>
+      <Route path="/" element={<Users />}></Route>
       <Route path="/Users/About" element={<About />}></Route>
-      <Route path="Users" element={<Users />}></Route>
       <Route
         path="*"
         element={
@@ -20,12 +18,13 @@ export default function App() {
               <h1>Error 404 </h1>
               <h2>Page Not Found!</h2>
               <Link className="home-link" to="/">
-                Home Page
+                Dashboard
               </Link>
             </div>
           </>
         }
-      ></Route>
+        ></Route>
     </Routes>
+        </div>
   );
 }

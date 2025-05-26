@@ -1,0 +1,31 @@
+export const techRoles = [
+  "Frontend Developer",
+  "Backend Developer",
+  "Fullstack Engineer",
+  "Data Scientist",
+  "DevOps Engineer",
+  "UI/UX Designer",
+  "Mobile Developer",
+  "QA Engineer",
+  "Product Designer",
+  "Product Manager",
+  "Product Marketer",
+  "Digital Marketer",
+  "Data Analyst",
+];
+
+export const shortDescriptions = [
+  "Passionate about building scalable and user-friendly web interfaces.",
+  "Loves working with APIs, servers, and database systems.",
+  "Skilled at building complete end-to-end web solutions.",
+  "Specializes in statistical analysis, machine learning, and big data.",
+  "Expert in automating workflows and managing cloud infrastructure.",
+  "Focused on designing intuitive and visually appealing interfaces.",
+  "Crafts seamless and high-performance mobile applications.",
+  "Committed to ensuring software quality through rigorous testing.",
+  "Combines design thinking with product usability for great user experiences.",
+  "Leads teams to deliver impactful products with clear roadmaps and goals.",
+  "Drives product growth through strategic messaging and market research.",
+  "Specializes in online branding, SEO, and social media campaigns.",
+  "Enjoys finding insights in data to support business decisions.",
+];

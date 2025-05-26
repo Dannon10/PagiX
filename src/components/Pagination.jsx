@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
 import { Button } from "antd";
 
-const User = (props) => {
+const Pagination = (props) => {
   const {
     usersPerPage,
     totalUsers,
@@ -17,7 +16,6 @@ const User = (props) => {
   }
 
   return (
-    <>
       <div className="pagination">
         {currentPage !== 1 && (
           <li>
@@ -35,8 +33,7 @@ const User = (props) => {
           </li>
         )}
       </div>
-    </>
   );
 };
 
-export default User;
+export default Pagination;

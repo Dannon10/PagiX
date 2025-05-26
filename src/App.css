@@ -1,496 +1,367 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
 }
 
-html{
+html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  background-color: hsl(220, 100%, 97%);
-  color: hsl(220, 24%, 15%);
-  height: 100dvh;
+  font-family: 'Inter', sans-serif;
+  color: #19191B;
 }
 
-.nav-container{
-  width: 100%;
-  height: 7dvh;
+.app-container {
+  padding: 2rem;
+}
+
+.nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: hsl(220, 24%, 15%);
-  color: white;
+  height: 6vh;
 }
 
-.nav-content{
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: underline;
+  color: #19191B;
+}
+
+.about-link {
+  font-size: 1.5rem;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.badge {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 2rem;
+  gap: 2rem;
+  font-size: 1.75rem;
+  background-color: #efebfe;
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
-  .logo{
-    font-size: 1.5rem;
+.user-container p {
+  color: #787A82;
+}
+
+.heading-text {
+  text-align: center;
+  width: 90%;
+}
+
+.badge p {
+  color: #6236F5;
+}
+
+.user-container h1 {
+  font-size: 3rem;
+}
+
+.profile-img {
+  display: block;
+  min-height: 60rem;
+  object-fit: cover;
+  width: 360px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow-y: hidden;
+}
+
+.profile-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.profile-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 360px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: #f8f8f8;
+  padding: 1.5rem;
+  z-index: 10;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 1.85rem;
+  font-weight: 800;
+}
+
+.profile-description {
+  font-size: 1.45rem;
+  color: #787A82;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  color: #999;
+  font-size: 1.4rem;
+}
+
+.profile-card .profile-role {
+  color: #6236F5;
+  text-transform: uppercase;
+  font-size: 1.45rem;
+}
+
+.profile-card {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.pagination {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: ease-in 3s;
+  padding: 3rem 2rem 0rem 2rem;
+}
+
+.paginate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.pagination a {
+  padding: 0.6rem;
+  margin: 1.5px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #19191B;
+}
+
+.pagination a:hover {
+  color: white;
+  transition: ease-in 0.2s;
+  background-color: #19191B;
+}
+
+a:active {
+  color: white;
+  background-color: #19191B;
+}
+
+.page-active {
+  color: white;
+  background-color: #19191B;
+  border-radius: 5px;
+}
+
+.move:hover {
+  background-color: #19191B;
+}
+
+Button {
+  cursor: pointer;
+  margin: 4.5px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #19191B;
+  background-color: #19191B;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100dvh;
+}
+
+.about-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.about {
+  text-align: center;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+@media(min-width: 768px) {
+
+  body {
+    font-size: 1.4rem;
   }
 
-  .nav-content>ul{
-    list-style-type: none;
-  }
-  
-  .nav-links{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .nav-link a{
-    display: inline-block;
-    text-decoration: none;
-    margin: 0 2rem;
-    font-size: 1.2rem;
-    color: white;
-    transition: transform .3s ease-in-out;
-    will-change: transform;
-  }
-  
-  .nav-link a:hover{
-    cursor: pointer;
-    transform: scale(1.2);
-    text-decoration: underline;
+  .app-container {
+    padding: 2rem 4rem 2rem 4rem;
   }
 
-  .home-main{
-    height: 87dvh;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .logo {
+    font-size: 1.9rem;
   }
 
-  .home-main h1{
-    font-size: 3.5rem;
-    margin-bottom: 2rem;
+  .about-link {
+    font-size: 1.75rem;
   }
 
-  .home-main h3{
-    font-size: 1.45rem;
-    margin-bottom: 1.2rem;
-
-  }
-
-  .home-main p{
-    font-size: 1.3rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .home-main a{
-    width: 12rem;
-    height: 5rem;
-    text-decoration: none;
-    display: flex;
-    align-self: center;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    margin-top: 1.8rem;
-    background-color: hsl(220, 24%, 15%);
-    border: 0.2rem solid hsl(220, 24%, 15%);
-    border-radius: .8rem;
-    outline: 0.2rem solid white;
-    outline-offset: -.5rem;
-  }
-
-  footer{
-    font-size: .8rem;
-    background-color: hsl(220, 24%, 15%);
-    height: 6dvh;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .about-main h1{
+  .badge {
     font-size: 2rem;
   }
 
-  .about-main h3{
-    font-size: 2rem;
-    margin-top: 1.2rem;
+  .user-container h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
   }
 
-  .about-list{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-    margin-top: 1.5rem;
-  }
-
-  .about-list li{
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .about-main p{
-    font-size: 1.5rem;
-  }
-
-  #work{
-    font-size: 1.5rem;
-    margin-top: .5rem;
-  }
-
-  #built{
-    font-size: 1.2rem;
-  }
-
-  #built-list li{
-    font-size: 1.5rem;
-  }
-
-  .user-container{
+  .profile-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, auto);
-    /* height: max-content; */
-    height: 84dvh;
-    margin-bottom: 2rem;
-    gap: 8px;
     justify-content: center;
-    width: 80%;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
   }
 
-  .profile-card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: "#e3f2fd";
-    border-radius: .5rem;
-    transition: all .4s ease-in-out;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 17rem;
-    height: 14rem;
-    transition: .4s ease-in-out;
+  .profile-card {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
-  .profile-card:hover{
-    transform: scale(1.1);
-    cursor: pointer;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  .profile-name {
+    font-size: 1.9rem;
   }
 
-  .profile-img{
-    width: 6rem;
-    height: 6rem;
-    border-radius: 50%;
-    margin-bottom: .5rem;
+  .profile-description {
+    font-size: 1.5rem;
   }
 
-  .profile-name{
-    font-size: 1.3rem;
-    margin-bottom: .15rem;
+  .profile-card .profile-role {
+    font-size: 1.5rem;
   }
 
-  .profile-email{
-    font-size: 1rem;
-    margin-bottom: .15rem;
+  .pagination a {
+    padding: 1rem;
+    margin: 1rem;
   }
 
-  .profile-age{
-    font-size: 1rem;
-    margin-bottom: .15rem;
+  .about-container li {
+    text-align: center;
+    list-style: none;
+    padding-top: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile-cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
   }
 
-  .pagination{
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: ease-in 3s;
+  .logo {
+    font-size: 2.5rem;
   }
 
-  .paginate{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
+  .image-wrapper {
+    width: 320px;
   }
 
-  .pagination a{
-    padding: 8px;
-    margin: 1.5px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid hsl(220, 24%, 15%);
+  .about-link {
+    font-size: 2.2rem;
   }
 
-  .pagination a:hover{
-    color: white;
-    transition: ease-in 0.2s;
-    background-color: hsl(220, 24%, 15%);
+  .app-container {
+    padding: 2.5rem 5rem;
   }
 
-  a:active{
-    color: white;
-    background-color: hsl(220, 24%, 15%);
-  }
-  
-  .page-active{
-    color: white;
-    background-color: hsl(220, 24%, 15%);
-    border-radius: 5px;
+  .badge {
+    font-size: 3rem;
   }
 
-  .move:hover{
-    background-color: hsl(220, 24%, 15%);
+  .user-container h1 {
+    font-size: 4.5rem;
   }
 
-  Button{
-    cursor: pointer;
-    margin: 4.5px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid hsl(220, 24%, 15%);
-    background-color: hsl(220, 24%, 15%);
+  .profile-name {
+    font-size: 2rem;
   }
 
-  @media (min-width: 768px) {
+  .profile-description,
+  .profile-role {
+    font-size: 1.6rem;
+  }
+}
 
-    .nav-container{
-      height: 9dvh;
-    }
+@media (min-width: 1280px) {
 
-    .logo{
-      font-size: 2rem;
-    }
-
-    .nav-link a{
-      font-size: 1.5rem;
-    }
-
-    .home-main{
-      height: 85dvh;
-    }
-
-    .home-main h1{
-      font-size: 3.5rem;
-    }
-
-    .home-main h3{
-      font-size: 1.5rem;
-    }
-
-    .home-main p{
-      font-size: 1.2rem;
-    }
-
-    .home-main a{
-      width: 10rem;
-      height: 4rem;
-    }
-
-    footer{
-      font-size: 1rem;
-    }
-
-    .about-main>h1{
-      font-size: 1.5rem;
-    }
-
-    .about-main>h3{
-      font-size: 1.5rem;
-    }
-
-    .about-list>li{
-      font-size: 1rem;
-    }
-
-    .user-container{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, auto);
-      height: 80dvh;
-      justify-content: center;
-      width: 80%;
-      align-items: center;
-      margin: 0 auto;
-    }
-
-    .profile-card{
-      width: 12rem;
-      height: 12rem;
-    }
-
-    .profile-img{
-      width: 5rem;
-      height: 5rem;
-    }
-
-    .profile-name{
-      font-size: 1rem;
-    }
-
-    .profile-email{
-      font-size: .8rem;
-    }
-
-    .profile-age{
-      font-size: .8rem;
-    }
-
-    .pagination a {
-      padding: 8px;
-      margin: 6px;
-    }
-
-    Button {
-      margin: 7px;
-    }
-
+  .logo {
+    font-size: 3rem;
   }
 
-  @media (min-width: 1024px) {
-    
-    .logo{
-      font-size: 3rem;
-    }
+  .about-link {
+    font-size: 2.5rem;
+  }
 
-    
-    .nav-container{
-      height: 9dvh;
-    }
-    
-    .nav-link a{
-      font-size: 1.65rem;
-    }
+  .image-wrapper {
+    width: 360px;
+  }
 
-    .home-main{
-      height: 85dvh;
-    }
+  .profile-cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 3rem;
+  }
 
-    .home-main h1{
-      font-size: 4.5rem;
-    }
+  .app-container {
+    padding: 3rem 6rem;
+  }
 
-    .home-main h3{
-      font-size: 2.3rem;
-      margin-top: 1.5rem;
-    }
-    
-    .home-main p{
-      font-size: 2rem;
-    }
-    
-    .home-main a{
-      text-decoration: none;
-      display: flex;
-      align-self: center;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      margin-top: .8rem;
-      width: 13rem;
-      height: 4.5rem;
-      background-color: hsl(220, 24%, 15%);
-      border: 0.2rem solid hsl(220, 24%, 15%);
-      border-radius: .8rem;
-      outline: 0.2rem solid white;
-      outline-offset: -.5rem;
-      }
-    
-      footer{
-        background-color: hsl(220, 24%, 15%);
-        height: 6dvh;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.05rem;
-      }
-    
-      .about-main>h1{
-        font-size: 1.69rem;
-      }
-    
-      .about-main>h3{
-        font-size: 1.69rem;
-        margin-top: 1.2rem;
-      }
-    
-      .about-list{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: .5rem;
-      }
-    
-      .about-list>li{
-        font-size: 1.3rem;
-        margin-bottom: .5rem;
-      }
-      
-      #built{
-        margin-top: 2rem;
-      }
-    
-      .user-container{
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(2, auto);
-        gap: 8px;
-        height: 80dvh;
-        justify-content: center;
-        width: 80%;
-        align-items: center;
-        margin: 0 auto;
-        }
-    
-      .profile-card{
-        width: 18rem;
-        height: 15rem;
-      }
+  .user-container h1 {
+    font-size: 3.8rem;
+  }
 
-      .profile-img{
-        width: 7rem;
-        height: 7rem;
-      }
-    
-      .profile-name{
-        font-size: 1.3rem;
-      }
-    
-      .profile-email{
-        font-size: 1rem;
-      }
-    
-      .profile-age{
-        font-size: 1rem;
-      }
-    
-      .pagination{
-        width: 100%;
-      }
-    
-      .pagination a {
-        padding: 10px;
-        margin: 3px;
-      }
-    
-    Button {
-      margin: 6px;
-    }
-    
-    } 
+  .profile-name {
+    font-size: 2.2rem;
+  }
+
+  .profile-description,
+  .profile-role {
+    font-size: 1.7rem;
+  }
+}
